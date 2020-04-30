@@ -2,6 +2,7 @@
 set -e
 
 chown -R ceph:ceph /etc/ceph
+chmod -R ugo+rw /etc/ceph/*
 
 if [ -z "$MON_IP" ]; then
   hostname -i | tr " " "\n" > addresses.txt
