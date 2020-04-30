@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+chown -R ceph:ceph /etc/ceph
+
 if [ -z "$MON_IP" ]; then
   hostname -i | tr " " "\n" > addresses.txt
   while read item; do
